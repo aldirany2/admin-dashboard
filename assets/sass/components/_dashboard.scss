@@ -1,6 +1,7 @@
 body {
     padding: 0;
     margin: 0;
+    font-family: "roboto";
 }
 
 .dashboard-wrapper {
@@ -9,8 +10,61 @@ body {
     grid-template-columns: 1fr 4fr;
 
     .dash-side {
-        background-color: blue;
+        background-color: #1992d4;
         grid-row: 1/4;
+        padding: 20px;
+
+        .logo {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            img {
+                max-width: 40px;
+                margin-right: 8px;
+                filter: brightness(0) invert(1);
+            }
+
+            span {
+                color: #fff;
+                font-size: 20px;
+                font-weight: 500;
+                text-transform: capitalize;
+            }
+        }
+
+        .upper-list,
+        .down-list {
+            margin: 20px 0;
+
+            ul {
+                list-style-type: none;
+                text-decoration: none;
+                padding: 0;
+
+                li {
+                    color: #fff;
+                    display: flex;
+                    align-items: flex-start;
+                    font-weight: 500;
+                    text-transform: capitalize;
+                    padding: 10px;
+                    margin: 5px 0;
+                    border-radius: 4px;
+                    transition: 0.5s;
+
+                    &:hover{
+                        background-color: #167eb7;
+                    }
+
+                    img {
+                        width: 20px;
+                        margin-right: 16px;
+                        filter: brightness(0) invert(1);
+                    }
+                }
+            }
+        }
     }
 
     .header {
@@ -19,35 +73,35 @@ body {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
 
-        .sittings-wrapper{
+        .sittings-wrapper {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            
-            .search{
+
+            .search {
                 flex: 0 1 60%;
             }
-            
-            .profile{
+
+            .profile {
                 flex: 0 1 30%;
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
                 gap: 24px;
 
-                > div{
+                >div {
                     display: flex;
                     align-items: center;
                 }
             }
         }
 
-        .profile-wrapper{
+        .profile-wrapper {
             display: flex;
             justify-content: space-between;
             align-items: center;
 
-            .dash-action-btns{
+            .dash-action-btns {
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
