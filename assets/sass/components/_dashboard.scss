@@ -149,6 +149,14 @@ body {
             align-items: center;
             margin-top: 16px;
 
+            @media(max-width:991px) {
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 24px;
+                margin-top: 0;
+            }
+
             >div {
                 display: flex;
                 align-items: center;
@@ -182,6 +190,10 @@ body {
                 align-items: center;
                 gap: 22px;
 
+                @media(max-width:991px) {
+                    align-self: flex-end;
+                }
+
                 button {
                     padding: 4px 16px;
                     font-weight: 500;
@@ -208,49 +220,140 @@ body {
         padding: 30px 16px;
         display: grid;
         grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr 1fr;
         gap: 16px;
+
+        @media(max-width:991px) {
+            grid-template-columns: 1fr;
+            gap: 32px;
+
+        }
 
 
         .projects-wrapper {
             grid-row: 1/3;
-            
-            h5{
+
+            h5 {
                 font-size: 16px;
                 font-weight: 600;
                 text-transform: capitalize;
             }
 
-            .projects-card{
+            .projects-card {
                 display: grid;
                 gap: 16px;
-                grid-template-columns: repeat(auto-fit, minmax(300px , 2fr));
+                grid-template-columns: repeat(auto-fit, minmax(min(200px, 50%), 1fr));
 
-                .card{
-                    padding: 20px 24px;
+                .card {
+                    padding: 20px 24px 30px 20px;
                     border-left: 6px solid #facc15;
-                    border-radius: 6px;
+                    border-radius: 8px;
+
+                    p {
+                        line-height: 20px;
+                        color: #83868b;
+                    }
+
+                    .social-icons {
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        gap: 30px;
+                        margin-top: 12px;
+
+                        img {
+                            width: 20px;
+                            height: 20px;
+
+                        }
+                    }
                 }
             }
         }
 
         .announc {
-            // background-color: green;
 
-            h5{
+            h5 {
                 font-size: 16px;
                 font-weight: 600;
                 text-transform: capitalize;
             }
 
+            .announc-content {
+                background-color: #fff;
+                padding: 30px 20px;
+                border-radius: 8px;
+
+                >div {
+                    padding-top: 8px;
+                    margin-bottom: 8px;
+                    border-bottom: 1px solid #d3d7dc;
+
+                    &:last-child {
+                        padding-bottom: 0;
+                        margin-bottom: 0;
+                        border-bottom: unset;
+                    }
+
+                    h6 {
+                        font-size: 14px;
+                        font-weight: 700;
+                        text-transform: capitalize;
+                        margin-bottom: 4px;
+                    }
+
+                    p {
+                        color: #83868b;
+                        line-height: 14px;
+                        font-size: 13px;
+                    }
+                }
+            }
+
         }
 
         .trending {
-            // background-color: greenyellow;
 
-            h5{
+            h5 {
                 font-size: 16px;
                 font-weight: 600;
                 text-transform: capitalize;
+            }
+
+            .trending-content {
+                background-color: #fff;
+                padding: 30px 20px;
+                border-radius: 8px;
+
+                >div {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 24px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    img {
+                        background-color: #facc15;
+                        width: 45px;
+                        height: 45px;
+                        border-radius: 50%;
+                        margin-right: 16px;
+                    }
+
+                    h6 {
+                        font-size: 14px;
+                        font-weight: 700;
+                        margin: 0;
+                    }
+
+                    span {
+                        font-size: 14px;
+                        color: #83868b;
+                        text-transform: capitalize;
+                    }
+                }
             }
 
         }
